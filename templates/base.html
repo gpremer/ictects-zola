@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/blueprint/screen.css" media="screen,projection">
+    <link rel="stylesheet" href="stylesheets/blueprint/ie.css" media="screen,projection">
+    <link rel="stylesheet" href="stylesheets/blueprint/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/ictects.css" media="screen,projection">
+    <script type="text/javascript" src="/scripts/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/scripts/fix_email.js"></script>
+    <title>ICTects BV</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header" class="span-24 last">
+            <div id="social">
+                <a href='http://be.linkedin.com/in/geertpremereur'>
+                    <img src='images/linkedin-01.png' alt='Follow me on linked in'>
+                </a>
+            </div>
+            <div class="logo">
+                <h1><a href="/"><img src="images/logo-01.png" alt="ICTects  "></a></h1>
+            </div>
+            <div id="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        {% block content %} {% endblock %}
+        <div id="footer" class="span-24 last">
+            &copy; 2008-2022 - ICTects BV
+        </div>
+    </div>
+
+</body>
+
+</html>

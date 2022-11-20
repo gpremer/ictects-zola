@@ -1,0 +1,65 @@
+body {
+  background: #3e3e3e url('/images/stripe.png') repeat center top;
+  color: #000b0f;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border: 10px solid black;
+  margin: 10px 0px 10px 0px;
+}
+
+#header {
+  margin-bottom: 15px;
+}
+
+#footer {
+  margin-top: 50px;
+  border-top: 2px solid black;
+}
+
+#logo h1 {
+  margin: 0px;
+}
+
+#navigation {
+    background: #c00 url('/images/bg-02.png') repeat-y right top;
+    text-align: right;
+    color: #fff;
+}
+
+#navigation a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#navigation ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#navigation ul li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  margin: 0px;
+}
+
+img.column {
+  margin: -15px 0px 15px 0px;
+}
+
+img.centered {
+  margin: 0px auto 0px auto;
+  display: block;
+}
+
+img.inline {
+  float: right;
+}
+
+#social {
+  float: right;
+}
