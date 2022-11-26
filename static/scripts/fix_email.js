@@ -1,6 +1,12 @@
-$(document).ready(function() {
-    $('.fix_email').each(function(i) {
-        span = $($('.fix_email')[i])
-        span.text(span.text().replace('<', '').replace(' at ','@').replace(' dot ', '.').replace('>', ''))
-    })
+const ready = (callback) => {
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
+}
+
+ready(() => {
+  document.querySelectorAll('.fix_email').forEach(span => {
+    const plain = span.innerHTML;
+    const corrected = plain.replace('@test.com', '@ictects.com');
+    span.innerHTML = corrected;
+  })
 });

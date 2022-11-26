@@ -34,6 +34,7 @@
 
           buildInputs = with pkgs; [
             nixpkgs-fmt
+            wrangler
           ];
 
           shellHook = ''
