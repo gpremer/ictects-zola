@@ -5,7 +5,7 @@
 
 stdenv.mkDerivation {
   pname = "website";
-  version = "0.0.1";
+  version = "0.0.2";
 
   src = ./.;
 

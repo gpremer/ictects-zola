@@ -21,7 +21,7 @@
         devShells.default = pkgs.mkShell {
           inputsFrom = builtins.attrValues self.checks.${system};
 
-          buildInputs = (with pkgs; [ nixpkgs-fmt ]);
+          buildInputs = (with pkgs; [ nixpkgs-fmt libwebp imagemagick]);
 
           shellHook = ''
             echo using Zola $(${pkgs.zola}/bin/zola --version)
