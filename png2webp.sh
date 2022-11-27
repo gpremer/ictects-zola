@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Converts all png images lossily to webp with a fixed quality
 # This doesn't mean that webp should be used for all images.
 # Only for the photo-like ones.
 
 quality=50
-
-set -euo pipefail
 
 [ -x "$(command -v convert)" ] || (
     echo "ImageMagick is not installed"

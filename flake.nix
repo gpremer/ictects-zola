@@ -2,8 +2,8 @@
   description = "ICTects website";
 
   inputs = {
-    # Nixpkgs / NixOS version to use.
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    # Nixpkgs / NixOS version to use. Here using unstable because we want wranger 2.x which is not in 22.05
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     utils.url = "github:numtide/flake-utils";
   };
 
@@ -21,7 +21,7 @@
         devShells.default = pkgs.mkShell {
           inputsFrom = builtins.attrValues self.checks.${system};
 
-          buildInputs = (with pkgs; [ nixpkgs-fmt libwebp imagemagick]);
+          buildInputs = (with pkgs; [ nixpkgs-fmt libwebp imagemagick wrangler]);
 
           shellHook = ''
             echo using Zola $(${pkgs.zola}/bin/zola --version)
