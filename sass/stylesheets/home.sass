@@ -1,0 +1,80 @@
+$eggshell: #F3E9D2
+$teagreen: #C6DABF
+$grannysmithapple: #88D498
+$illuminatingemerald: #1A936F
+$midnightgreen: #114B5F
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700')
+
+$background-color: $eggshell
+
+$logo-background: $midnightgreen
+$logo-text: rgb(240, 240, 240)
+
+$card-background: $grannysmithapple
+$card-text: rgb(16, 32, 16)
+
+$sans-serif: "Nunito", sans-serif
+
+@mixin colors($text, $background)
+    background-color: $background
+    color: $text
+
+@mixin center()
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin card($text, $background)
+    @include colors($text, $background)
+    @include center()
+
+body
+    background-color: $background-color
+    font: 100% $sans-serif
+
+.content
+    display: block
+    margin: 1em
+
+    &--centered
+        @include center()
+        flex-direction: column
+
+p
+    display: block
+    margin-bottom: 1em
+
+.larger
+    font-size: 125%
+
+section
+    display: flex
+    flex-direction: row
+    flex-grow: 1
+    align-items: stretch
+    background-color: $background-color
+
+    .company
+        @include card($logo-text, $logo-background)
+        flex-grow: 1
+        min-width: 300px
+        .logo
+            font: 1500% $sans-serif
+            margin-top: -0.4em
+            margin-bottom: -0.4em
+        h1
+            font: 400% $sans-serif
+
+    .intro
+        @include card($card-text, $card-background)
+        font: 125% $sans-serif
+        flex-grow: 1
+        min-width: 300px
+
+        .content
+            max-width: 30vw
+
+    &.section-main
+        min-height: 200px
+        height: 100vh
+        flex-wrap: wrap
