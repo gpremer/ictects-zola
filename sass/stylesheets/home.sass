@@ -10,10 +10,19 @@ $background-color: $eggshell
 $logo-background: $midnightgreen
 $logo-text: rgb(240, 240, 240)
 
-$card-background: $grannysmithapple
+$short-bio-background: $grannysmithapple
+$services-background: $eggshell
+$about-background: $illuminatingemerald
+$contact-background: $teagreen
 $card-text: rgb(16, 32, 16)
 
 $sans-serif: "Nunito", sans-serif
+
+$layout-breakpoint-phone: 768px
+
+@mixin tablet-up
+    @media (min-width: $layout-breakpoint-phone)
+        @content
 
 @mixin colors($text, $background)
     background-color: $background
@@ -31,6 +40,8 @@ $sans-serif: "Nunito", sans-serif
 body
     background-color: $background-color
     font: 100% $sans-serif
+    &::-webkit-scrollbar
+        display: none
 
 .content
     display: block
@@ -39,6 +50,9 @@ body
     &--centered
         @include center()
         flex-direction: column
+
+h1
+    font: 200% $sans-serif
 
 p
     display: block
@@ -49,14 +63,21 @@ p
 
 section
     display: flex
-    flex-direction: row
+    flex-direction: column
     flex-grow: 1
     align-items: stretch
     background-color: $background-color
 
+    &.welcome
+        display: flex
+        flex-direction: row
+        min-height: 200px
+        height: 100vh
+        flex-wrap: wrap
+
     .company
         @include card($logo-text, $logo-background)
-        flex-grow: 1
+        flex-grow: 2
         min-width: 300px
         .logo
             font: 1500% $sans-serif
@@ -65,16 +86,22 @@ section
         h1
             font: 400% $sans-serif
 
-    .intro
-        @include card($card-text, $card-background)
+    .short-bio
+        @include card($card-text, $short-bio-background)
         font: 125% $sans-serif
         flex-grow: 1
         min-width: 300px
+        @include tablet-up
+            max-width: 50vw
 
         .content
-            max-width: 30vw
+            padding: 3em
 
-    &.section-main
-        min-height: 200px
-        height: 100vh
-        flex-wrap: wrap
+    .services
+        @include card($card-text, $services-background)
+
+    .about
+        @include card($card-text, $about-background)
+
+    .contact
+        @include card($card-text, $contact-background)
