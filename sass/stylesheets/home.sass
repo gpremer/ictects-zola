@@ -44,12 +44,20 @@ body
         display: none
 
 .content
-    display: block
     margin: 1em
+    @include center()
+    flex-direction: column
+    height: 100%
 
-    &--centered
-        @include center()
-        flex-direction: column
+    .first-section
+        margin-top: auto
+
+    .next-section
+        margin-top: auto
+        margin-bottom: 0
+        a
+            text-decoration: none
+            color: inherit
 
 h1
     font: 200% $sans-serif
@@ -93,15 +101,18 @@ section
         min-width: 300px
         @include tablet-up
             max-width: 50vw
-
-        .content
-            padding: 3em
+            .content
+                padding: 10vw
+                padding-bottom: 1em
 
     .services
         @include card($card-text, $services-background)
+        height: 50vh
 
     .about
         @include card($card-text, $about-background)
+        height: 50vh
 
     .contact
         @include card($card-text, $contact-background)
+        height: 50vh
