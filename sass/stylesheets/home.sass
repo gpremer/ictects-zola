@@ -4,6 +4,7 @@ $grannysmithapple: #88D498
 $illuminatingemerald: #1A936F
 $midnightgreen: #114B5F
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700')
+@import url('https://fonts.googleapis.com/css?family=Seaweed%20Script')
 
 $background-color: $eggshell
 
@@ -12,16 +13,23 @@ $logo-text: rgb(240, 240, 240)
 
 $short-bio-background: $grannysmithapple
 $services-background: $eggshell
-$about-background: $illuminatingemerald
-$contact-background: $teagreen
+$about-background: $teagreen
+$contact-background: $eggshell
 $card-text: rgb(16, 32, 16)
+$menu-text: $card-text
+$header-color: $illuminatingemerald
 
 $sans-serif: "Nunito", sans-serif
+$script: "Seaweed Script", serif
 
 $layout-breakpoint-phone: 768px
 
 @mixin tablet-up
     @media (min-width: $layout-breakpoint-phone)
+        @content
+
+@mixin tablet-down
+    @media (max-width: $layout-breakpoint-phone)
         @content
 
 @mixin colors($text, $background)
@@ -37,6 +45,27 @@ $layout-breakpoint-phone: 768px
     @include colors($text, $background)
     @include center()
 
+@mixin horizontal-menu
+    ul
+        list-style-type: none
+        margin: 0
+        padding: 0
+        text-align: right
+        font: 100% $sans-serif
+        color: $card-text
+
+    li
+        display: inline-block
+
+@mixin menu-item-style
+    a
+        text-decoration: none
+        color: black
+        padding: 0em 1em
+
+html
+    scroll-behavior: smooth
+
 body
     background-color: $background-color
     font: 100% $sans-serif
@@ -49,22 +78,28 @@ body
     flex-direction: column
     height: 100%
 
-    .first-section
-        margin-top: auto
-
-    .next-section
-        margin-top: auto
-        margin-bottom: 0
-        a
-            text-decoration: none
-            color: inherit
-
 h1
     font: 200% $sans-serif
 
 p
     display: block
     margin-bottom: 1em
+
+.header
+    position: absolute
+    left: 0
+    top: 0
+    height: 1.5em
+    width: 100%
+    background-color: $header-color
+    box-shadow: 0 4px 4px $header-color
+    padding: 2px 2px 2px 2px
+    @include tablet-down
+        display: none
+
+.menu
+    @include horizontal-menu
+    @include menu-item-style
 
 .larger
     font-size: 125%
@@ -79,8 +114,7 @@ section
     &.welcome
         display: flex
         flex-direction: row
-        min-height: 200px
-        height: 100vh
+        min-height: 100vh
         flex-wrap: wrap
 
     .company
@@ -93,6 +127,8 @@ section
             margin-bottom: -0.4em
         h1
             font: 400% $sans-serif
+        .slogan
+            font: 150% $script
 
     .short-bio
         @include card($card-text, $short-bio-background)
@@ -107,12 +143,12 @@ section
 
     .services
         @include card($card-text, $services-background)
-        height: 50vh
+        min-height: 50vh
 
     .about
         @include card($card-text, $about-background)
-        height: 50vh
+        min-height: 50vh
 
     .contact
         @include card($card-text, $contact-background)
-        height: 50vh
+        min-height: 50vh
