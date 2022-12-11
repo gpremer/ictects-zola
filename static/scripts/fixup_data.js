@@ -16,4 +16,5 @@ ready(() => {
     elt.innerHTML = corrected;
   })
 
+  console.log('Nice try, but there\'s nothing here');
 });

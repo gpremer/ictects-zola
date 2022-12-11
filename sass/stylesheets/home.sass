@@ -3,10 +3,12 @@ $teagreen: #C6DABF
 $grannysmithapple: #88D498
 $illuminatingemerald: #1A936F
 $midnightgreen: #114B5F
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700')
-@import url('https://fonts.googleapis.com/css?family=Seaweed%20Script')
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Seaweed+Script&family=Source+Code+Pro')
+// @import url('https://fonts.googleapis.com/css2?family=Seaweed+Script')
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro')
 
 $background-color: $eggshell
+$text-color: rgb(16, 32, 16)
 
 $logo-background: $midnightgreen
 $logo-text: rgb(240, 240, 240)
@@ -15,12 +17,15 @@ $short-bio-background: $grannysmithapple
 $services-background: $eggshell
 $about-background: $teagreen
 $contact-background: $eggshell
-$card-text: rgb(16, 32, 16)
+$card-text: $text-color
 $menu-text: $card-text
 $header-color: $illuminatingemerald
+$link-text-color: $text-color
+$link-line-color: $midnightgreen
 
 $sans-serif: "Nunito", sans-serif
 $script: "Seaweed Script", serif
+$code: "Source Code Pro", monospace
 
 $layout-breakpoint-phone: 768px
 
@@ -44,6 +49,7 @@ $layout-breakpoint-phone: 768px
 @mixin card($text, $background)
     @include colors($text, $background)
     @include center()
+    padding: 1em
 
 @mixin horizontal-menu
     ul
@@ -73,17 +79,31 @@ body
         display: none
 
 .content
-    margin: 1em
     @include center()
+    margin: 1em
     flex-direction: column
     height: 100%
 
+    h1
+        margin-bottom: 1em
+
 h1
-    font: 200% $sans-serif
+    font: 300% $sans-serif
+    margin-bottom: 0.25em
+h2
+    font: 175% $sans-serif
+    margin-bottom: 0.2em
 
 p
     display: block
     margin-bottom: 1em
+
+a
+    &:link, &:visited
+        color: $link-text-color
+        text-decoration-line: underline
+        text-decoration-style: dashed
+        text-decoration-color: $link-line-color
 
 .header
     position: absolute
@@ -103,6 +123,14 @@ p
 
 .larger
     font-size: 125%
+
+.code
+    font: 100% $code
+
+address
+    break-inside: avoid
+    font-weight: bolder
+    font-style: normal
 
 section
     display: flex
@@ -127,6 +155,7 @@ section
             margin-bottom: -0.4em
         h1
             font: 400% $sans-serif
+            margin-bottom: 0
         .slogan
             font: 150% $script
 
@@ -138,17 +167,72 @@ section
         @include tablet-up
             max-width: 50vw
             .content
-                padding: 10vw
+                padding: 5vw
                 padding-bottom: 1em
 
     .services
         @include card($card-text, $services-background)
         min-height: 50vh
 
+        &__grid
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: 1fr 1fr
+            @include tablet-down
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                p
+                    font: 120% $sans-serif
+
+        &__grid-cell
+            padding: 1em
+            @include tablet-down
+                min-width: 100vw
+                padding-left: 2em
+                padding-right: 2em
+
+        consulting
+            grid-column-start: 2
+            grid-row-start: 1
+
+        development
+            grid-column-start: 1
+            grid-row-start: 1
+
+        photography
+            grid-column-start: 2
+            grid-row-start: 2
+
+        training
+            grid-column-start: 1
+            grid-row-start: 2
+
     .about
         @include card($card-text, $about-background)
         min-height: 50vh
 
+        .the-story
+            column-count: auto
+            column-width: 20em
+            column-gap: 2em
+
+            h2
+                break-after: avoid
+
     .contact
         @include card($card-text, $contact-background)
         min-height: 50vh
+
+        .contact-data
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            column-gap: 3em
+            row-gap: 1em
+
+            &__item
+                flex-grow: 1
+                flex-shrink: 1
+                min-width: 15em
+                max-width: 20em

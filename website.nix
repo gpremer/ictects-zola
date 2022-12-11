@@ -3,10 +3,12 @@
 , zola
 }:
 
+let
+  version = builtins.date "+%Y.%m.%d-%H.%M.%S";
+in
 stdenv.mkDerivation {
-  pname = "website";
-  version = "0.0.7";
-
+  name = "website";
+  
   src = ./.;
 
   buildInputs = [ zola ];
