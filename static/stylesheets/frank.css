@@ -22,10 +22,10 @@ h1 {
     text-decoration: none;
 }
 
-#content {
-    width: 1280px;
+ #content {
+    max-width: 1280px;
     margin: 0px auto;
-}
+} 
 
 .grid {
     display: flex;
@@ -76,5 +76,21 @@ h1 {
 
 .contact {
     /* background-color: darkseagreen; */
+}
+
+ul.social-media {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    list-style-type: none;
+    align-items: center;
+    padding: 0px;
+    margin: 0;
+}
+
+ul.social-media li a {
+    color: black;
+    background-color: white;
+    text-decoration: none;
 }
 
