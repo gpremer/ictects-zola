@@ -1,0 +1,80 @@
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    list-style-type: none;
+    align-items: baseline;
+    padding: 0px;
+    margin: 0;
+}
+
+.menu ul li a {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+
+#content {
+    width: 1280px;
+    margin: 0px auto;
+}
+
+.grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.grid-cell {
+    flex-basis: 290px;
+    min-width: 290px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.content {
+    margin: 20px auto;
+    padding: 10px 20px 10px 20px;
+}
+.header {
+    border-bottom: 1px dotted #ccc;
+    font-weight: bold;
+}
+
+.welcome {
+    background-color: white;
+}
+
+
+.company {
+    display: flex;
+    gap: 20px;
+}
+
+.slogan {
+    font-size: 4.2em;
+    color: #acd4f7;
+}
+
+.services {
+    background-color: #acd4f7;
+    border-radius: 3px;
+    /* background-color: cadetblue; */
+}
+
+.about {
+    /* background-color: darksalmon; */
+}
+
+.contact {
+    /* background-color: darkseagreen; */
+}
+
