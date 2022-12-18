@@ -20,6 +20,7 @@ $menu-text: $card-text
 $header-color: $illuminatingemerald
 $link-text-color: $text-color
 $link-line-color: $midnightgreen
+$menu-text-color: $eggshell
 
 $sans-serif: "Nunito", sans-serif
 $script: "Seaweed Script", serif
@@ -49,34 +50,56 @@ $layout-breakpoint-phone: 768px
     @include center()
     padding: 1em
 
-@mixin horizontal-menu
+@mixin vertical-menu
     ul
         list-style-type: none
         margin: 0
         padding: 0
         text-align: right
         font: 100% $sans-serif
+        display: flex
+        flex-direction: column
         color: $card-text
+        align-items: center
+        justify-content: center
 
     li
-        display: inline-block
+        padding-left: 1em
+        padding-right: 1em
+        padding-top: 1em
+        padding-bottom: 0
+    li:last-child
+        padding-bottom: 1em
 
 @mixin menu-item-style
     a
         text-decoration: none
-        color: black
-        padding: 0em 1em
+        color: $menu-text-color
 
 @mixin mask-image($url)
     -webkit-mask-image: url($url)
     mask-image: url($url)
+
+@mixin inline-image($image-color)
+    .inline-image
+        float: left
+        width: 5em
+        height: 5em
+        margin-right: 8px
+        margin-bottom: 8px
+        break-inside: avoid-column
+        background-color: $image-color
+        -webkit-mask-repeat: no-repeat no-repeat
+        mask-repeat: no-repeat no-repeat
+        -webkit-mask-size: cover
+        mask-size: cover
 
 html
     scroll-behavior: smooth
 
 body
     background-color: $background-color
-    font: 100% $sans-serif
+    font: 120% $sans-serif
     &::-webkit-scrollbar
         display: none
 
@@ -109,21 +132,18 @@ a
         text-decoration-thickness: 0.20rem
         text-underline-offset: 10%
 
-.header
-    position: absolute
-    left: 0
-    top: 0
-    height: 1.5em
-    width: 100%
+.menu
+    @include vertical-menu
+    @include menu-item-style
+    position: fixed
+    right: 2em
+    top: 1em
     background-color: $header-color
     box-shadow: 0 4px 4px $header-color
+    border-radius: 4px
     padding: 2px 2px 2px 2px
     @include tablet-down
         display: none
-
-.menu
-    @include horizontal-menu
-    @include menu-item-style
 
 .larger
     font-size: 125%
@@ -196,6 +216,11 @@ section
                 padding-left: 2em
                 padding-right: 2em
 
+        @include inline-image($illuminatingemerald)
+
+        #solutions-img
+            @include mask-image("../images/solutions.svg")
+
         consulting
             grid-column-start: 2
             grid-row-start: 1
@@ -224,18 +249,7 @@ section
             h2
                 break-after: avoid
 
-            .inline-image
-                float: left
-                width: 5em
-                height: 5em
-                margin-right: 8px
-                margin-bottom: 8px
-                break-inside: avoid-column
-                background-color: $midnightgreen
-                -webkit-mask-repeat: no-repeat no-repeat
-                mask-repeat: no-repeat no-repeat
-                -webkit-mask-size: cover
-                mask-size: cover
+            @include inline-image($midnightgreen)
 
             .c64
                 @include mask-image("../images/c64.svg")
