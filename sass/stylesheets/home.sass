@@ -67,6 +67,10 @@ $layout-breakpoint-phone: 768px
         color: black
         padding: 0em 1em
 
+@mixin mask-image($url)
+    -webkit-mask-image: url($url)
+    mask-image: url($url)
+
 html
     scroll-behavior: smooth
 
@@ -219,6 +223,34 @@ section
 
             h2
                 break-after: avoid
+
+            .inline-image
+                float: left
+                width: 5em
+                height: 5em
+                margin-right: 8px
+                margin-bottom: 8px
+                break-inside: avoid-column
+                background-color: $midnightgreen
+                -webkit-mask-repeat: no-repeat no-repeat
+                mask-repeat: no-repeat no-repeat
+                -webkit-mask-size: cover
+                mask-size: cover
+
+            .c64
+                @include mask-image("../images/c64.svg")
+
+            .cpp
+                @include mask-image("../images/C++.svg")
+
+            .java
+                @include mask-image("../images/java.svg")
+
+            .scala
+                @include mask-image("../images/scala.svg")
+
+            .pdf
+                @include mask-image("../images/pdf.svg")
 
     .contact
         @include card($card-text, $contact-background)
