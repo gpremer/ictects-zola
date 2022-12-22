@@ -1,5 +1,16 @@
 body {
     font-family: "Nunito", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background: white;
+    /* background: #fff url(../images/office-worker_800.jpg) no-repeat top 150px right 50px ;
+    background-attachment: fixed; */
+    /* background-image: ; */
+    /* background-position: top 300px right 150px; */
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -13,54 +24,86 @@ h1 {
     list-style-type: none;
     align-items: baseline;
     padding: 0px;
-    margin: 0;
+    margin: 5px 50px 5px auto;
+}
+
+.menu ul li.logo {
+    margin-right: auto;
+    margin-left: 50px;
 }
 
 .menu ul li a {
     color: black;
-    background-color: white;
     text-decoration: none;
 }
 
- #content {
+#content {
     max-width: 1280px;
     margin: 0px auto;
 } 
 
 .grid {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .grid-cell {
-    flex-basis: 290px;
-    min-width: 290px;
+    flex-basis: 272px;
+    min-width: 272px;
     flex-shrink: 1;
     flex-grow: 1;
 }
 
 .content {
-    margin: 20px auto;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 50px 10px 50px;
 }
+
 .header {
+    background: #fff;
+    background: linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(239,239,239,1) 11%, rgba(255,255,255,1) 100%);
     border-bottom: 1px dotted #ccc;
     font-weight: bold;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 
 .welcome {
-    background-color: white;
+    /* background-color: white; */
 }
 
 
 .company {
+    /* width: 1200x; */
+    /* background-image: url(../images/office-worker_800.jpg);
+    background-repeat: no-repeat;
+    background-position: right top; */
     display: flex;
-    gap: 20px;
+    justify-content: flex-start;
+    flex-direction: row;
+    /* border: 2px solid red; */
+}
+
+.company div.content {
+     flex-basis: 574px;
+     padding: 10px 0px 10px 50px;
+    /*min-width: 289px; */
+    /* border: 2px solid black; */
+    /* flex-basis: 50%; */
+}
+
+.company div.contents {
+    /* flex-basis: 600px; */
+   /*min-width: 289px; */
+   /* border: 2px solid black; */
+   /* flex-basis: 50%; */
 }
 
 .slogan {
-    font-size: 4.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4em;
+    font-weight: bold;
     color: #acd4f7;
 }
 
@@ -78,6 +121,32 @@ h1 {
     /* background-color: darkseagreen; */
 }
 
+.footer {
+    font-size: 0.8em;
+}
+
+.contact-data  {
+    max-width: 1180px;
+    margin: 0px auto;    
+    padding: 10px 50px 10px 50px;
+}
+
+.footer-1 {
+    background-color: #acd4f7;
+    border-bottom: 1px solid white;
+}
+
+.footer-2 {
+    background-color: #3d98e7;;
+    color: white;
+    padding: 10px 0px;
+}
+
+.footer-1 .grid, .footer-2 .grid {
+
+}
+
+
 ul.social-media {
     display: flex;
     gap: 50px;
@@ -89,8 +158,11 @@ ul.social-media {
 }
 
 ul.social-media li a {
-    color: black;
-    background-color: white;
+    color: white;
     text-decoration: none;
 }
 
+ul.social-media li a:hover {
+    color: black;
+    text-decoration: none;
+}
