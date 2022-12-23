@@ -1,29 +1,22 @@
-$eggshell: #F3E9D2
-$teagreen: #C6DABF
-$grannysmithapple: #88D498
-$illuminatingemerald: #1A936F
-$midnightgreen: #114B5F
+$blue: #acd4f7
+$darkblue: #3d98e7
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Seaweed+Script&family=Source+Code+Pro')
 
-$background-color: $eggshell
-$text-color: rgb(16, 32, 16)
+$background-color: white
+$text-color: black
+$link-text-color: $blue
+$link-line-color: $blue
+$header-color: black;
 
-$logo-background: $midnightgreen
-$logo-text: rgb(240, 240, 240)
-
-$short-bio-background: $grannysmithapple
-$services-background: $eggshell
-$about-background: $teagreen
-$contact-background: $eggshell
-$card-text: $text-color
-$menu-text: $card-text
-$header-color: $illuminatingemerald
-$link-text-color: $text-color
-$link-line-color: $midnightgreen
-
-$sans-serif: "Nunito", sans-serif
+$base-font: "Nunito", sans-serif
+$header-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif
 $script: "Seaweed Script", serif
 $code: "Source Code Pro", monospace
+
+$gap: 30px
+$spacing: 50px
+$column-width: 272px
+$content-width: 1280px
 
 $layout-breakpoint-phone: 768px
 
@@ -55,8 +48,8 @@ $layout-breakpoint-phone: 768px
         margin: 0
         padding: 0
         text-align: right
-        font: 100% $sans-serif
-        color: $card-text
+        font: 100% $base-font
+        //color: $card-text
 
     li
         display: inline-block
@@ -72,167 +65,126 @@ html
 
 body
     background-color: $background-color
-    font: 100% $sans-serif
+    color: $text-color
+    font: 100% $base-font
     &::-webkit-scrollbar
         display: none
 
-.content
-    @include center()
-    margin: 1em
-    flex-direction: column
-    height: 100%
-
-    h1
-        margin-bottom: 1em
+h1, h2, h3, h4, h5 
+    font-family: $header-font
+    font-weight: bold
+    margin: 0.5em 0em
 
 h1
-    font: 300% $sans-serif
-    margin-bottom: 0.25em
-h2
-    font: 175% $sans-serif
-    margin-bottom: 0.2em
+    font-size: 3em
+ 
+h2 
+    font-size: 2em
 
 p
-    display: block
-    margin-bottom: 1em
+    margin-bottom: 10px
 
-a
-    &:link, &:visited
-        color: $link-text-color
-        text-decoration-line: underline
-        text-decoration-style: solid
-        text-decoration-color: $link-line-color
-        text-decoration-thickness: 0.20rem
-        text-underline-offset: 10%
-
-.header
-    position: absolute
-    left: 0
+.header 
+    background: white linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(239,239,239,1) 11%, rgba(255,255,255,1) 100%)
+    border-bottom: 1px dotted #ccc
+    font-weight: bold
+    position: fixed
     top: 0
-    height: 1.5em
     width: 100%
-    background-color: $header-color
-    box-shadow: 0 4px 4px $header-color
-    padding: 2px 2px 2px 2px
-    @include tablet-down
-        display: none
 
-.menu
-    @include horizontal-menu
-    @include menu-item-style
+#content 
+    max-width: $content-width
+    margin: 0px auto
 
-.larger
-    font-size: 125%
+.footer 
+    font-size: 0.8em
 
-.code
-    font: 100% $code
+.content 
+    padding: 10px 50px 10px 50px
 
-address
-    break-inside: avoid
-    font-weight: bolder
-    font-style: normal
+.contact-data  
+    max-width: $content-width
+    margin: 0px auto
+    padding: $gap $spacing
 
-section
+.footer-1 
+    background-color: $blue
+    color: $text-color
+    border-bottom: 1px solid white
+
+.footer-2 
+    background-color: #3d98e7
+    color: white
+    padding: 10px 0px
+
+.footer-1 .grid, .footer-2 .grid 
+
+.menu ul 
     display: flex
-    flex-direction: column
+    gap: $gap
+    justify-content: right
+    list-style-type: none
+    align-items: baseline
+    padding: 0px
+    margin: 5px $spacing 5px auto
+
+.menu ul li.logo 
+    margin-right: auto
+    margin-left: $spacing
+
+.menu ul li a 
+    color: black
+    text-decoration: none
+
+ul.social-media 
+    display: flex
+    gap: $gap
+    justify-content: center
+    list-style-type: none
+    align-items: center
+    padding: 0px
+    margin: 0
+
+ul.social-media li a 
+    color: white
+    text-decoration: none
+
+ul.social-media li a:hover 
+    color: black
+    text-decoration: none
+
+.grid 
+    display: flex
+    gap: $gap
+    flex-wrap: wrap
+
+.grid-cell 
+    flex-basis: $column-width
+    min-width: $column-width
+    flex-shrink: 1
     flex-grow: 1
-    align-items: stretch
-    background-color: $background-color
 
-    &.welcome
-        display: flex
-        flex-direction: row
-        min-height: 100vh
-        flex-wrap: wrap
+.company 
+    background-repeat: no-repeat
+    display: flex
+    justify-content: flex-start
+    flex-direction: row
+    margin-top: 100px
 
-    .company
-        @include card($logo-text, $logo-background)
-        flex-grow: 2
-        min-width: 300px
-        .logo
-            font: 1500% $sans-serif
-            margin-top: -0.4em
-            margin-bottom: -0.4em
-        h1
-            font: 400% $sans-serif
-            margin-bottom: 0
-        .slogan
-            font: 150% $script
+@debug $column-width * 2 + $gap;
 
-    .short-bio
-        @include card($card-text, $short-bio-background)
-        font: 125% $sans-serif
-        flex-grow: 1
-        min-width: 300px
-        @include tablet-up
-            max-width: 50vw
-            .content
-                padding: 5vw
-                padding-bottom: 1em
+.company div.content 
+    flex-basis: $column-width * 2 + $gap
+    padding: 10px 0px 10px $spacing
 
-    .services
-        @include card($card-text, $services-background)
-        min-height: 50vh
+.slogan 
+    font-family: $header-font
+    font-size: 4em
+    font-weight: bold
+    color: $blue
+    margin-bottom: $spacing
 
-        &__grid
-            display: grid
-            grid-template-columns: 1fr 1fr
-            grid-template-rows: 1fr 1fr
-            @include tablet-down
-                display: flex
-                flex-direction: row
-                flex-wrap: wrap
-                p
-                    font: 120% $sans-serif
-
-        &__grid-cell
-            padding: 1em
-            @include tablet-down
-                min-width: 100vw
-                padding-left: 2em
-                padding-right: 2em
-
-        consulting
-            grid-column-start: 2
-            grid-row-start: 1
-
-        development
-            grid-column-start: 1
-            grid-row-start: 1
-
-        photography
-            grid-column-start: 2
-            grid-row-start: 2
-
-        training
-            grid-column-start: 1
-            grid-row-start: 2
-
-    .about
-        @include card($card-text, $about-background)
-        min-height: 50vh
-
-        .the-story
-            column-count: auto
-            column-width: 20em
-            column-gap: 2em
-
-            h2
-                break-after: avoid
-
-    .contact
-        @include card($card-text, $contact-background)
-        min-height: 50vh
-
-        .contact-data
-            display: flex
-            flex-direction: row
-            flex-wrap: wrap
-            column-gap: 3em
-            row-gap: 1em
-
-            &__item
-                flex-grow: 1
-                flex-shrink: 1
-                min-width: 15em
-                max-width: 20em
+.services 
+    background-color: $blue
+    border-radius: 3px
+    box-shadow: 2px 4px 6px #ccc, 5px 10px 12px #eee, 10px 20px 24px #efefef 
