@@ -24,163 +24,7 @@
         </ul>
     </div>
     <div id="content">
-        {% block content %} {% endblock %}
-
-        
-        
-        <section class="about" id="about">
-            <div class="content">
-
-                <p>Click <a href="{{ get_url(path='@/blog/_index.md') }}">here</a> to see my posts.</p>
-                
-                <!-- <h1>Technical interest</h1>
-                <div class="grid">
-
-                    <div class="grid-cell the-story">
-                        <p>
-                            Enough with all the fluff, let's give a somewhat
-                            chronological overview of what my computer-related
-                            interests have been over the years.
-                        </p>
-                        <h2>The beginning</h2>
-                        <p>
-                            It al began in 1983 when I got a <a
-                                href="https://en.wikipedia.org/wiki/Magnavox_Odyssey_2">Phillips
-                                Videopac G7000</a>. Altough I spent most of my time
-                            playing games on it, I also had a cartridge that let me
-                            make my first programs. In assembly language, no less.
-                            The programs where limited to 99 instructions but I
-                            learned about binary and hexadecimal numbers, boolean
-                            logic and control flow. The seed was planted!
-                        </p>
-                        <p>
-                            A few years later, the <a href="https://en.wikipedia.org/wiki/Commodore_64">Commodore
-                                64</a> entered our home. And with it came Commodore
-                            Basic: <span class="code">GOTO</span>, <span class="code">peek</span> and <span
-                                class="code">poke</span>. Structured programming also
-                            revealed itself to me in the guise of Pascal; with a
-                            compiler and linker on two different floppies.
-                        </p>
-                        <p>
-                            In 1987 modernity took hold in the form of a PC clone,
-                            the <a href="https://en.wikipedia.org/wiki/PC1512">Amstrad
-                                PC1512</a>. Turbo Pascal became my weapon of choice. And
-                            I got used to keyboard macros in WordPerfect and
-                            WordStar. I got familiar with Spreadsheet and database
-                            programming with Lotus 1-2-3 and dBase III+
-                            respectively.
-                        </p>
-    
-                        <h2>The university years</h2>
-                        <p>
-                            Pure informatics seemed a bit dull to 18-year old me, so
-                            as to keep a maximum of options open, I enrolled in the
-                            Applied Science degree at the University of Ghent. Since
-                            a Computer Science masters wasn't offered yet in 1991, I
-                            opted for Electronics. In my last masters year, a CS
-                            degree was introduced. I took the jump and I became the
-                            first CS Engineer to graduate at the University of
-                            Ghent.
-                        </p>
-                        <p>
-                            Since most of my formal education was about mathematics,
-                            electromagnetism and electronics I continued my
-                            tradition of self study and got immersed in Object
-                            Oriented programming. First with Turbo Pascal and later
-                            with Turbo C++.
-                        </p>
-                        <p>
-                            After 5 years of studying, I didn't feel quite ready to
-                            enter “the industry”, so I began working at the
-                            university for 4 more years as a teaching assistant to
-                            the late professor G. Hoffman. I helped with courses
-                            such as “Programming II” (C & C++), “Analysis & design”
-                            (UML) and, my favourite, “Formal Methods” (with prof. R.
-                            Boute).
-                        </p>
-                        <p>
-                            During those 4 years, the world of Linux opened itself
-                            to me. As well, the <a
-                                href="https://web.archive.org/web/20020604011051/http://inprem.rug.ac.be/">Internet</a>
-                            finally came to my desk at a whopping 2kBips!
-                            Programming-wise, it was still mostly C++ and some Perl.
-                            But in the later years, also Java made its debut.
-                        </p>
-    
-                        <h2>Working as an employee</h2>
-                        <p>
-                            In 1998, <a href="https://inno.com">INNOCOM</a> was
-                            founded as a collaboration of private capital with the
-                            academic world and it's there and then that I began my
-                            life as a technology consultant. I worked at INNOCOM for
-                            9 years and, being such a young company, I wore several
-                            hats: architect, application designer and implementer,
-                            technical team and practice lead and responsible for
-                            internal IT. I got the opportunity to work for many
-                            distinct customers. Both SME's and industry- leading
-                            multinationals.
-                        </p>
-                        <p>
-                            Technology-wise, it was mostly Java, Linux, Apache,
-                            mySql and Perl but there was also a fair bit of work
-                            related to the Microsoft platform with J++, ASP, COM+,
-                            SqlServer and IIS.
-                        </p>
-                        <p>
-                            While working at Toyota, I also got to immerse myself in
-                            mainframe technologies such as JCL, DB2 and SQLJ in
-                            combination with the J2EE stack.
-                        </p>
-    
-                        <h2>Self employed</h2>
-                        <p>
-                            In 2007 I started my own one-man consultancy business.
-                            At first, I continued the same line of work as at
-                            Inno.com. However, my real passion passion is in
-                            hands-on solving technical challenges, so I gradually
-                            moved from architecture consultancy to application
-                            design and implementation.
-                        </p>
-                        <p>
-                            Not long after my switch to self employment, I
-                            discovered Scala and functional programming. At first
-                            more an intellectual pursuit, this evolved to my main
-                            professional specialisation. My knowledge of functional
-                            programming was then further deepened by using the
-                            excellent fp-ts library with TypeScript.
-                        </p>
-                        <p>
-                            During this period, I witnessed the rise of the cloud
-                            and I got to “play” with the Amazon and Google cloud
-                            offerings from their beginnings. Related technologies
-                            breaking into the mainstream were Big Data and Machine
-                            Learning. These I got experience with working for Sony
-                            and through self study.
-                        </p>
-                        <p>
-                            Additional computer languages that I used along the way
-                            were Bash, Elm, Groovy, Haskell, Nix, Octave, Python, R,
-                            Ruby.
-                        </p>
-                        <p>
-                            Some of the notable tooling and platforms were Android,
-                            Angular, Bamboo, Docker, ElasticSearch, etcd, git,
-                            Jenkins, Kubernetes, MapReduce, Nix, RStudio, RxJava,
-                            RxJs, RxScala.
-                        </p>
-    
-                        <h2>CV</h2>
-                        <p>
-                            A more factual listing of the projects I participated in
-                            can be found in my <a href="/cv/cv_gpr_en.pdf">long-form
-                                cv</a> or my
-                            <a href="/cv/cv_gpr_short_en.pdf">short-form cv</a>.
-                        </p>
-                    </div>
-                </div> -->
-            </div>
-        </section> 
-        
+        {% block content %} {% endblock %}        
     </div>
     <div class="footer">
         <div class="footer-1">
@@ -194,7 +38,7 @@
                     <p>
                         Sending an email is often the most reliable and always the preferred method of contacting
                         me.
-                    <ul>
+                    <ul class="fix_email">
                         <li>For job offers & requests <a href="mailto:jobs@test.com">jobs@test.com</a></li>
                         <li>For general information <a href="mailto:info@test.com">info@test.com</a></li>
                     </ul>
@@ -207,7 +51,7 @@
                     <p>
                         Calling or texting me is possible at this number:
 
-                    <address class="fix_telnr">+32 487 123 495</address>
+                    <address class="fix_telnr"><a href="tel:+32487123495">+32 487 123 495</a></address>
                     </p>
                 </div>
 
@@ -235,13 +79,9 @@
         </div>
         <div class="footer-2">
             <ul class="social-media">
-                <li>Follow me on:</li>
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                    <path fill="#000000" d="M ... Z" /> <!-- account -->
-                  </svg>
-                  
-                <li><a href="https://www.linkedin.com/in/geertpremereur/"><img src="../static/images/linkedin.svg" alt="Follow me on Linked-in" height="21px" width="21px"/></a></li>
-                <li><a href="https://github.com/gpremer"><img src="../static/images/github.svg" alt="Follow me on GitHub" width="21px" height="21px"/></a></li>
+                <li>Follow me on:</li>                  
+                <li><a href="https://www.linkedin.com/in/geertpremereur/"><img src="/images/linkedin.svg" alt="Follow me on Linked-in" height="21px" width="21px"/></a></li>
+                <li><a href="https://github.com/gpremer"><img src="/images/github.svg" alt="Follow me on GitHub" width="21px" height="21px"/></a></li>
             </ul>
         </div>
     </div>

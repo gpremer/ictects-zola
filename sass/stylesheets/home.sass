@@ -3,10 +3,10 @@ $darkblue: #3d98e7
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Seaweed+Script&family=Source+Code+Pro')
 
 $background-color: white
-$text-color: black
+$text-color: #111
 $link-text-color: $blue
 $link-line-color: $blue
-$header-color: black;
+$header-color: #111
 
 $base-font: "Nunito", sans-serif
 $header-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif
@@ -70,21 +70,21 @@ body
     &::-webkit-scrollbar
         display: none
 
-h1, h2, h3, h4, h5 
+h1, h2, h3, h4, h5
     font-family: $header-font
     font-weight: bold
     margin: 0.5em 0em
 
 h1
     font-size: 3em
- 
-h2 
+
+h2
     font-size: 2em
 
 p
     margin-bottom: 10px
 
-.header 
+.header
     background: white linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(239,239,239,1) 11%, rgba(255,255,255,1) 100%)
     border-bottom: 1px dotted #ccc
     font-weight: bold
@@ -92,34 +92,35 @@ p
     top: 0
     width: 100%
 
-#content 
+#content
     max-width: $content-width
     margin: 0px auto
 
-.footer 
+.footer
     font-size: 0.8em
+    margin-top: $spacing
 
-.content 
+.content
     padding: 10px $spacing $spacing $spacing
 
-.contact-data  
+.contact-data
     max-width: $content-width
     margin: 0px auto
     padding: $gap $spacing
 
-.footer-1 
+.footer-1
     background-color: $blue
     color: $text-color
-    border-bottom: 1px solid white
+    border-bottom: 1px solid #99c
 
-.footer-2 
+.footer-2
     background-color: #3d98e7
     color: white
     padding: 10px 0px
 
-.footer-1 .grid, .footer-2 .grid 
+.footer-1 .grid, .footer-2 .grid
 
-.menu ul 
+.menu ul
     display: flex
     gap: $gap
     justify-content: right
@@ -128,15 +129,15 @@ p
     padding: 0px
     margin: 5px $spacing 5px auto
 
-.menu ul li.logo 
+.menu ul li.logo
     margin-right: auto
     margin-left: $spacing
 
-.menu ul li a 
+.menu ul li a
     color: black
     text-decoration: none
 
-ul.social-media 
+ul.social-media
     display: flex
     gap: $gap
     justify-content: center
@@ -145,44 +146,44 @@ ul.social-media
     padding: 0px
     margin: 0
 
-ul.social-media li a 
+ul.social-media li a
     color: white
     text-decoration: none
 
-ul.social-media li a:hover 
+ul.social-media li a:hover
     color: black
     text-decoration: none
 
-.grid 
+.grid
     display: flex
     gap: $gap
     flex-wrap: wrap
 
-.grid-cell 
+.grid-cell
     flex-basis: $column-width
     min-width: $column-width
     flex-shrink: 1
     flex-grow: 1
 
-.company 
+.company
     background-repeat: no-repeat
     display: flex
     justify-content: flex-start
     flex-direction: row
     margin-top: 100px
 
-.company div.content 
+.company div.content
     flex-basis: $column-width * 2 + $gap
     padding: 10px 0px 10px $spacing
 
-.slogan 
+.slogan
     font-family: $header-font
     font-size: 4em
     font-weight: bold
     color: $blue
     margin-bottom: $spacing
 
-.services 
+.services
     background-color: $blue
     border-radius: 3px
-    box-shadow: 2px 4px 6px #ccc, 5px 10px 12px #eee, 10px 20px 24px #efefef 
+    box-shadow: 2px 4px 6px #ccc, 5px 10px 12px #eee, 10px 20px 24px #efefef
