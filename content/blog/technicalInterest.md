@@ -32,16 +32,16 @@ While working at Toyota, I also got to immerse myself in mainframe technologies 
 
 ## Self employed
 
-In 2007 I started my own one-man consultancy business. At first, I continued the same line of work as at Inno.com. However, my real passion passion is in hands-on solving technical challenges, so I gradually moved from architecture consultancy to application design and implementation.
+In 2007, I started my own one-man consultancy business. Initially, I continued the same line of work as at Inno.com. However, my true passion is in hands-on solving technical challenges, so I gradually moved from architecture consultancy to application design and implementation.
 
-Not long after my switch to self employment, I discovered Scala and functional programming. At first more an intellectual pursuit, this evolved to my main professional specialisation. My knowledge of functional programming was then further deepened by using the excellent fp-ts library with TypeScript.
+Not long after my switch to self-employment, I discovered Scala and functional programming. Initially, it was more an intellectual pursuit, but this evolved to my main professional specialisation. Through self-study, my knowledge of functional programming was further deepened by using the excellent fp-ts library with TypeScript.
 
-During this period, I witnessed the rise of the cloud and I got to “play” with the Amazon and Google cloud offerings from their beginnings. Related technologies breaking into the mainstream were Big Data and Machine Learning. These I got experience with working for Sony and through self study.
+During this period, I witnessed the rise of the cloud, and I got to “play” with the Amazon and Google cloud offerings from their beginnings. Related technologies breaking into the mainstream were Big Data and Machine Learning, which I gained experience with working for Sony and through self-study.
 
-Additional computer languages that I used along the way were Bash, Elm, Groovy, Haskell, Nix, Octave, Python, R, Ruby.
+Additional computer languages that I used along the way were Bash, Elm, Groovy, Haskell, Nix, Octave, Python, R, and Ruby.
 
-Some of the notable tooling and platforms were Android, Angular, Bamboo, Docker, ElasticSearch, etcd, git, Jenkins, Kubernetes, MapReduce, Nix, RStudio, RxJava, RxJs, RxScala.
+Some of the notable tooling and platforms were Android, Angular, Bamboo, Docker, ElasticSearch, etcd, git, Jenkins, Kubernetes, MapReduce, Nix, RStudio, RxJava, RxJs, and RxScala.
 
 # CV
 
-A more factual listing of the projects I participated in can be found in my long-form cv or my short-form cv.
+A more factual listing of the projects I participated in can be found in my [abbreviated CV](/cv/cv_gpr_short_en.pdf) or my [comprehensive CV](/cv/cv_gpr_en.pdf).
